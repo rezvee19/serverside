@@ -10,7 +10,7 @@
 <body>
     <div class="registration-form">
         <h1>Registration Form</h1>
-        <form action="#" method="post">
+        <form action="/registrationauth" method="post">
             <p>Full Name:</p> 
             <input type="text" name="fullname" placeholder="Full Name"><br>
             <p>User Name</p>
@@ -21,6 +21,11 @@
             <input type="password" name="password" placeholder="Password">
             <button type="submit">Sign Up</button><br>
         </form>
+        <div style="color: rgb(0, 140, 255); margin: 0.5 cm; padding: 10px;">
+            {{if.}}
+                {{.}}
+            {{end}}
+        </div>
     </div>
 
     
