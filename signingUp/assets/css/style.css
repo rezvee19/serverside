@@ -22,7 +22,7 @@ body{
     position:absolute;
     top:50%;
     color: #fff;
-     left: 50%;
+     left: 30%;
      transform: transition(-50%, -50%);
      font-size: 40px  ;
 }
