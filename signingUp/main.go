@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strings"
 
 	"github.com/gorilla/sessions"
 	"github.com/mateors/mcb"
@@ -36,6 +37,27 @@ func init() {
 	}
 	fmt.Println(res, err)
 
+}
+func stringToMap(inputString string) map[string]string {
+
+	if len(inputString) == 0 {
+		return nil
+	}
+	if !strings.Contains(inputString, "=") {
+		return nil
+	}
+	slc := strings.Split(inputString, "&")
+
+	strtoMap := make(map[string]string)
+
+	for _, val := range slc {
+
+		slcval := strings.Split(val, "=")
+
+		strtoMap[slcval[0]] = slcval[1]
+
+	}
+	return strtoMap
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
